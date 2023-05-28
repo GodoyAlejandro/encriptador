@@ -12,15 +12,23 @@ const encript = () => {
     .replace(/a/gi, "ai")
     .replace(/o/gi, "ober")
     .replace(/u/gi, "ufat");
-  showString.innerHTML = `<h2>${encriptedText}</h2>`;
+  if (areaValue) {
+    showString.innerHTML = `<h2>${encriptedText}</h2>
+    <button id="copy-btn">copiar</button>
+    `;
+  }else{
+    showString.innerHTML = `<p>Ningun mensaje fue encontrado</p>
+    <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
+  }
 };
 
 const handleTextAreaChange = () => {
+  const localstorage = localStorage.getItem("mensajes");
+
   let areaValue = textArea1.value;
   if (!areaValue) {
-    console.log("voycamviando");
-    // showString.innerHTML = `<p>Ningun mensaje fue encontrado</p>
-    // <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
+    showString.innerHTML = `<p>Ningun mensaje fue encontrado</p>
+    <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
   }
 };
 
@@ -39,4 +47,4 @@ const desencript = () => {
 
 btn.addEventListener("click", encript);
 desencriptedBtn.addEventListener("click", desencript);
-textArea1.addEventListener("focus", handleTextAreaChange);
+textArea1.addEventListener("change", handleTextAreaChange);
