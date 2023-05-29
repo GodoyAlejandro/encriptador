@@ -3,20 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
+  background: #f3f5fc;
 }
-
-.main-container{
+.main-container {
   min-height: 100vh;
-
 }
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: auto;
   background: #f3f5fc;
-
 }
 main > p {
   color: #495057;
@@ -25,6 +22,11 @@ main > p {
   align-self: flex-start;
   margin-left: 2rem;
 }
+section {
+  background: #f3f5fc;
+  display: flex;
+  justify-content: center;
+}
 #ttc {
   border: none;
   width: 22rem;
@@ -32,7 +34,7 @@ main > p {
   font-size: 2rem;
   color: #0a3871;
   overflow: visible;
-  resize: vertical;
+  resize: none;
   padding: 0.5rem;
   margin-top: 1rem;
   background: #f3f5fc;
@@ -45,7 +47,7 @@ main > p {
   font-size: 2rem;
   font-style: normal;
 }
-.encripted-btns{
+.encripted-btns {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,7 +62,6 @@ main > p {
   border: none;
   margin: 0.5rem;
 }
-
 #desencripted-button {
   color: #0a3871;
   font-size: 1.5rem;
@@ -75,7 +76,7 @@ main > p {
   background: #ffffff;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
   border-radius: 32px;
-  padding: 1rem 0rem .5rem 0rem;
+  padding: 1rem 0rem 0.5rem 0rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
   min-height: 13rem;
@@ -83,14 +84,21 @@ main > p {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+}
+#encripted-area > img {
+  background: #ffffff;
+  width: 33rem;
 }
 #encripted-area > p:nth-child(1) {
+  background: #ffffff;
   color: #343a40;
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
 }
 #encripted-area > p:nth-child(2) {
+  background: #ffffff;
   text-align: center;
   color: #495057;
   font-size: 1.3rem;
@@ -126,10 +134,54 @@ main > p {
     padding: 1rem;
     min-height: 35rem;
   }
-  .encripted-btns{
+  .encripted-btns {
     flex-direction: row;
   }
-  #encripted-area{
+  #encripted-area {
     width: 45rem;
+  }
+}
+
+/*desktop*/
+
+@media only screen and (min-width: 1200px) {
+  #main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+  }
+  main {
+    justify-content: center;
+    width: 60%;
+  }
+  #ttc {
+    width: 30rem;
+    align-self: center;
+  }
+  main>p{
+    align-self: center;
+  }
+  .encripted-btns {
+    align-self: center;
+    width: 30rem;
+  }
+
+  #convert-button {
+    height: 4rem;
+    width: 18rem;
+  }
+  #desencripted-button {
+    height: 4rem;
+    width: 18rem;
+  }
+  section {
+    width: 40%;
+  }
+  #encripted-area {
+    width: 27rem;
+  }
+  #encripted-area > img {
+    width: 18rem;
   }
 }

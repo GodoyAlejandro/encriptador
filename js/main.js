@@ -42,7 +42,8 @@ const desencript = () => {
     .replace(/ober/gi, "o")
     .replace(/ufat/gi, "u");
 
-  showString.innerHTML = `<h2>${encriptedText}</h2>`;
+  showString.innerHTML = `<h2>${encriptedText}</h2>
+  <button id="copy-btn">copiar</button>`;
 };
 
 btn.addEventListener("click", encript);
