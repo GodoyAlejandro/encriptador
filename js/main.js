@@ -3,6 +3,11 @@ const btn = document.getElementById("convert-button");
 const desencriptedBtn = document.getElementById("desencripted-button");
 const showString = document.getElementById("encripted-area");
 
+const handleCopy = () => {
+  const cb = navigator.clipboard;
+  cb.writeText(showString.value);
+  console.log("funciono");
+};
 const encript = () => {
   let areaValue = textArea1.value;
 
@@ -13,22 +18,21 @@ const encript = () => {
     .replace(/o/gi, "ober")
     .replace(/u/gi, "ufat");
   if (areaValue) {
-    showString.innerHTML = `<h2>${encriptedText}</h2>
-    <button id="copy-btn">copiar</button>
-    `;
-  }else{
-    showString.innerHTML = `<p>Ningun mensaje fue encontrado</p>
-    <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
-  }
-};
+    showString.innerHTML = `<p>${encriptedText}</p>
+    <button id="copy-btn" >copiar</button>`;
+    document.getElementById("copy-btn").addEventListener("click", () => {
+      const cb = navigator.clipboard;
+      cb.writeText(encriptedText);
+      console.log("funciono");
+    });
 
-const handleTextAreaChange = () => {
-  const localstorage = localStorage.getItem("mensajes");
-
-  let areaValue = textArea1.value;
-  if (!areaValue) {
-    showString.innerHTML = `<p>Ningun mensaje fue encontrado</p>
+    showString.style.justifyContent = "space-between";
+  } else {
+    showString.innerHTML = `<img src="./img/Contemplating-bro.png" alt="" srcset="">
+    <p>Ningun mensaje fue encontrado</p>
     <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
+    showString.style.justifyContent = "center";
+    copyBtn.style.display = "none";
   }
 };
 
@@ -42,10 +46,23 @@ const desencript = () => {
     .replace(/ober/gi, "o")
     .replace(/ufat/gi, "u");
 
-  showString.innerHTML = `<h2>${encriptedText}</h2>
-  <button id="copy-btn">copiar</button>`;
+  if (areaValue) {
+    showString.innerHTML = `<p>${encriptedText}</p>
+    <button id="copy-btn" >copiar</button>`;
+    document.getElementById("copy-btn").addEventListener("click", () => {
+      const cb = navigator.clipboard;
+      cb.writeText(encriptedText);
+      console.log("funciono");
+    });
+    showString.style.justifyContent = "space-between";
+  } else {
+    showString.innerHTML = `<img src="./img/Contemplating-bro.png" alt="" srcset="">
+      <p>Ningun mensaje fue encontrado</p>
+      <p>ingresa el texto que desees encriptar o desencriptar.</p>`;
+    showString.style.justifyContent = "center";
+    copyBtn.style.display = "none";
+  }
 };
 
 btn.addEventListener("click", encript);
 desencriptedBtn.addEventListener("click", desencript);
-textArea1.addEventListener("change", handleTextAreaChange);

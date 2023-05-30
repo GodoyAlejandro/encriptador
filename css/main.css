@@ -8,7 +8,6 @@
 .main-container {
   min-height: 100vh;
 }
-
 main {
   display: flex;
   flex-direction: column;
@@ -47,6 +46,9 @@ section {
   font-size: 2rem;
   font-style: normal;
 }
+#encripted-area > img {
+  display: none;
+}
 .encripted-btns {
   display: flex;
   flex-direction: column;
@@ -71,7 +73,6 @@ section {
   border: 0.15rem solid #0a3871;
   margin: 0.5rem;
 }
-
 #encripted-area {
   background: #ffffff;
   box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -91,25 +92,28 @@ section {
   width: 33rem;
 }
 #encripted-area > p:nth-child(1) {
+  background-color: #ffffff;
+  color: #495057    ;
+  font-size: 2rem;
+  font-weight: 400;
+  word-break: break-all;
+  margin: 0.5rem;
+  height: 33rem;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#encripted-area > p:nth-child(2) {
   background: #ffffff;
   color: #343a40;
   font-weight: 700;
   font-size: 2rem;
   text-align: center;
 }
-#encripted-area > p:nth-child(2) {
+#encripted-area > p:nth-child(3) {
   background: #ffffff;
   text-align: center;
   color: #495057;
   font-size: 1.3rem;
-}
-#encripted-area > h2 {
-  color: #343a40;
-  font-weight: 700;
-  font-size: 2rem;
-  text-align: left;
-  word-wrap: break-word;
-  padding-left: 0.5rem;
 }
 #copy-btn {
   color: #0a3871;
@@ -140,6 +144,17 @@ section {
   #encripted-area {
     width: 45rem;
   }
+  #encripted-area > p:nth-child(1) {
+    background-color: #ffffff;
+    color: #495057    ;
+    font-size: 2rem;
+    font-weight: 400;
+    word-break: break-all;
+    margin: 0.5rem;
+    height: 33rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
 }
 
 /*desktop*/
@@ -159,14 +174,13 @@ section {
     width: 30rem;
     align-self: center;
   }
-  main>p{
+  main > p {
     align-self: center;
   }
   .encripted-btns {
     align-self: center;
     width: 30rem;
   }
-
   #convert-button {
     height: 4rem;
     width: 18rem;
@@ -181,7 +195,22 @@ section {
   #encripted-area {
     width: 27rem;
   }
+  #encripted-area > p:nth-child(1) {
+    background-color: #ffffff;
+    color: #495057    ;
+    font-size: 2rem;
+    font-weight: 400;
+    word-break: break-all;
+    margin: 0.5rem;
+    height: 33rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+  #encripted-area > p:nth-child(1)::-webkit-scrollbar {
+    display: none;
+  }
   #encripted-area > img {
+    display: block;
     width: 18rem;
   }
 }
